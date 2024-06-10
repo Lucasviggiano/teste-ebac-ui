@@ -6,9 +6,9 @@ describe('funcionalidade login', () => {
         cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
     });
 
-afterEach(() => {
-    cy.screenshot()
-});
+    afterEach(() => {
+        cy.screenshot()
+    });
 
     it('Deve realizar o login com sucesso', () => {
 
