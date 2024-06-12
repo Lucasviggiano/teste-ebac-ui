@@ -22,10 +22,10 @@ describe('funcionalidade registro', () => {
     });
 
     it('deve realizar o cadastro com sucesso - usando variáveis', () => {
-var email = faker.internet.email()
-var nome = faker.person.firstName()
-var sobrenome = faker.person.lastName()
-        
+        var email = faker.internet.email()
+        var nome = faker.person.firstName()
+        var sobrenome = faker.person.lastName()
+
         cy.get('#reg_email').type(email)
         cy.get('#reg_password').type('1234567890')
         cy.get(':nth-child(4) > .button').click()
@@ -37,6 +37,17 @@ var sobrenome = faker.person.lastName()
         cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.')
 
     });
+
+    it.only('Deve realizar o cadastro com sucesso - usando comando customizado', () => {
+        cy.preCadastro(faker.internet.email(), '1234567890', faker.person.firstName(), faker.person.lastName())
+        cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.')
+
+    
+    
+    });
+
+
+
 
 
 });
