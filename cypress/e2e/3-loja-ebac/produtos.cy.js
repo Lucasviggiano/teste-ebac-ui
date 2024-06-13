@@ -29,7 +29,7 @@ describe('funcionalidade: produtos', () => {
     });
 
 
-    it.only('Deve buscar um produto com sucesso', () => {
+    it('Deve buscar um produto com sucesso', () => {
         ProdutosPage.buscarProduto('Apollo Running Short')
         cy.get('.product_title').should('contain', 'Apollo Running Short')
     });
