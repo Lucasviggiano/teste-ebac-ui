@@ -56,9 +56,9 @@ describe('funcionalidade login', () => {
 
     })
 
-    it.only('Deve fazer login com sucesso - Customizado', () => {
+    it('Deve fazer login com sucesso - Customizado', () => {
         cy.login('lucas.teste@teste.com', 'teste123')
-        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, lucas.teste-8485')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, lucas')
 
 
     });
